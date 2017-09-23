@@ -19,6 +19,21 @@ If you use this base image to create a new Prestashop that is set up with your c
 
 # Using phpmyadmin
 
+1.  Open the phpadminclient at your specified host:port (default localhost:3081)
+
+2.  Select the prestashop database name specified in the docker-compose.yml (default prestashop) in the left column
+
+3.  Select `Export` from the header menu above the database table names
+
+4.  Select `Quick` as an export method
+
+5.  Select `SQL` as the export format
+
+6.  Press `GO` and save the file in the project as `/docker/mariadb/import.sql`.  By default the 'save as' will try to save it as `import.mysql` so make sure you type out `import.sql` in the save as box and select `YES` to overwrite the existing file.
+
+You now have a save the Prestashop configuration 'as is'.  You can upload this setup to a new repository, zip it an dmove it to a different server or keep it in the existing server in a new folder or keep it where you have it.
+
+When you want to launch this new Prestashop docker configuration go to the root of the folder, change any environment settings (detialed above) and run `docker-compose up -d`
 
 
 # Using Prestashop interface
