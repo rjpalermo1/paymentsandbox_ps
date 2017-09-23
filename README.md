@@ -17,6 +17,12 @@ The docker-compose will boot and link 3 docker containers.
 
 If you use this base image to create a new Prestashop that is set up with your custom data and configuration it can be saved as it's own stand-alone configuration be following these steps
 
+# Using phpmyadmin
+
+
+
+# Using Prestashop interface
+
 1.  In the Prestashop admin interface, backup the entire database.
 
 For running an existing running website, export your database to a SQL file and paste it in `docker/mariadb/import.sql`. It will be imported to MariaDB when creating the container.
