@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2017-09-23 11:27:05
+<?php /* Smarty version Smarty-3.1.19, created on 2017-09-23 12:34:43
          compiled from "/var/www/html/admin847hxbjtq/themes/default/template/controllers/modules/login_addons.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:183216725159c67d4925b5b6-73807696%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b847cd90662629683f618ed089cedf492747f323' => 
     array (
       0 => '/var/www/html/admin847hxbjtq/themes/default/template/controllers/modules/login_addons.tpl',
-      1 => 1506179304,
+      1 => 1506183129,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_59c67d492dde92_36810758',
   'variables' => 
   array (
     'add_permission' => 0,
@@ -26,8 +28,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'addons_forgot_password_link' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_59c67d492dde92_36810758',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59c67d492dde92_36810758')) {function content_59c67d492dde92_36810758($_smarty_tpl) {?>
 

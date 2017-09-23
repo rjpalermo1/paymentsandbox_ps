@@ -10,7 +10,38 @@ The docker-compose will boot and link 3 docker containers.
 
 ## How to use it
 
+1.  Ensure Docker toolbox is setup on your machine
 
+2.  git clone this repository into your project folder
+```
+create the default paymentsandbox_ps project directory:
+
+git clone https://github.com/rjpalermo1/paymentsandbox_ps.git
+
+-or-
+
+create a custom <name> project directory:
+
+git clone https://github.com/rjpalermo1/paymentsandbox_ps.git <name>
+
+```
+
+> NOTE:  When you git clone a hidden .git file will be added to the project root folder that links to the git repository you just pulled the code from.  If you will be setting up a custom shop and making this image your own then you should remove this hidden `.git` folder and `git init` to your own repository.
+
+3.  Go into your project root folder `/docker/mariadb` and rename `import.sql.bak` to `import.sql`
+
+4.  From your project root folder, run docker-compose
+
+```
+docker-compose up -d
+```
+
+This will spin up the docker environment and provide a basic Payment Sandbox Prestashop store at localhost:3080
+
+* Admin Login username:  admin@example.com
+* Admin Login password: password
+* Customer Login username: customer@example.com
+* Customer Login password: password
 
 
 ## Customized Prestashop installations
