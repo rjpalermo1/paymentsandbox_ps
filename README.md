@@ -36,17 +36,20 @@ git clone https://github.com/rjpalermo1/paymentsandbox_ps.git <name>
 docker-compose up -d
 ```
 
-This will spin up the docker environment and provide a basic Payment Sandbox Prestashop store at localhost:3080
+This will spin up the docker environment and provide a basic Payment Sandbox Prestashop store at localhost:3080.  If you haven't spun up this environment already docker will need to pull the server images from the Internet and this can take a few minutes.  If you already have the server images installed this should only take a few seconds.
 
+**ADMIN LOGIN AT localhost:3080/
 * Admin Login username:  admin@example.com
 * Admin Login password: password
+
 * Customer Login username: customer@example.com
 * Customer Login password: password
 
+## Customizing and Saving Prestashop installations
 
-## Customized Prestashop installations
+**NOTE THE PAYMENT SANDBOX PRESTASHOP BASE IMAGE IS FOR DEVELOPMENT AND DEMONSTRATION ONLY.  IT IS NOT CONFIGURED FOR A PRODUCTION ENVIRONMENT**
 
-If you use this base image to create a new Prestashop that is set up with your custom data and configuration it can be saved as it's own stand-alone configuration be following these steps
+You can use this base image to create a new Prestashop that with custom data and configuration for development and save it as it's own Docker setup.
 
 # Using phpmyadmin
 
