@@ -38,10 +38,11 @@ docker-compose up -d
 
 This will spin up the docker environment and provide a basic Payment Sandbox Prestashop store at localhost:3080.  If you haven't spun up this environment already docker will need to pull the server images from the Internet and this can take a few minutes.  If you already have the server images installed this should only take a few seconds.
 
-**ADMIN LOGIN AT localhost:3080/
+**ADMIN LOGIN AT localhost:3080/admin
 * Admin Login username:  admin@example.com
 * Admin Login password: password
 
+**CUSTOMER LOGIN AT localhost:3080
 * Customer Login username: customer@example.com
 * Customer Login password: password
 
@@ -49,11 +50,11 @@ This will spin up the docker environment and provide a basic Payment Sandbox Pre
 
 **NOTE THE PAYMENT SANDBOX PRESTASHOP BASE IMAGE IS FOR DEVELOPMENT AND DEMONSTRATION ONLY.  IT IS NOT CONFIGURED FOR A PRODUCTION ENVIRONMENT**
 
-You can use this base image to create a new Prestashop that with custom data and configuration for development and save it as it's own Docker setup.
+You can use this base image to create a new Prestashop that with custom data and configuration for development and save it as it's own docker-compose setup.
 
-# Using phpmyadmin
+# Use phpmyadmin
 
-1.  Open the phpadminclient at your specified host:port (default localhost:3081)
+1.  Open the phpadminclient at your specified host:port in the docker-compose.yml (default localhost:3081)
 
 2.  Select the prestashop database name specified in the docker-compose.yml (default prestashop) in the left column
 
@@ -63,23 +64,24 @@ You can use this base image to create a new Prestashop that with custom data and
 
 5.  Select `SQL` as the export format
 
-6.  Press `GO` and save the file in the project as `/docker/mariadb/import.sql`.  By default the 'save as' will try to save it as `import.mysql` so make sure you type out `import.sql` in the save as box and select `YES` to overwrite the existing file.
+6.  Press `GO` and save the file in the project as `/docker/mariadb/<name>.mysql`.
 
-You now have a save the Prestashop configuration 'as is'.  You can upload this setup to a new repository, zip it an dmove it to a different server or keep it in the existing server in a new folder or keep it where you have it.
+You now have a save the Prestashop configuration 'as is'.  You can upload this setup to a new repository, zip it and move it to a different server or keep it in the existing server in a new folder or keep it where you have it.
 
-When you want to launch this new Prestashop docker configuration go to the root of the folder, change any environment settings (detialed above) and run `docker-compose up -d`
+When you want to launch this new Prestashop docker configuration go to the root of your project folder and in `docker\mariadb` rename the mysql export file you saved as `import.sql`.
 
+If you need to change the exposed Docker ports serving Prestashop and phpmyadmin then in the docker-compose file go under each 'service' and change the local port number to your preference.  For example, the base image serves Prestashop on <dockerhost>:3080 (ie localhost:3080).  To serve Prestashop on port <dockerhost>:4444 go into docker-compose.yml and change the exposed por in the service.  The port configuration ooks like this <exposed port>:<docker port>.
 
-# Using Prestashop interface
+```
+services:
+  prestashop:
+    build: ./docker/prestashop
+    ports:
+      - `4444`:80
 
-1.  In the Prestashop admin interface, backup the entire database.
+```
 
-For running an existing running website, export your database to a SQL file and paste it in `docker/mariadb/import.sql`. It will be imported to MariaDB when creating the container.
-
-The prestashop image is customized to include Xdebug, higher limits, etc. You can customize the Dockerfile, run `docker-compose build prestashop` and `docker-compose up`.
-
-
-Helpful links about PrestaShop:
+# Helpful links about PrestaShop:
 
 * User Guide: http://doc.prestashop.com/display/PS17/User+Guide
 * Tech docs (modules & themes): http://developers.prestashop.com/
@@ -91,14 +93,5 @@ Helpful links about PrestaShop:
 * Contribute with code: https://github.com/PrestaShop/PrestaShop
 * Contribute with translation: http://crowdin.net/project/prestashop-official
 
-
-#### src/config/settings.inc.php
-```php
-<?php
-define('_DB_SERVER_',         getenv('DB_SERVER'));
-define('_DB_NAME_',           getenv('DB_NAME'));
-define('_DB_USER_',           getenv('DB_USER'));
-define('_DB_PASSWD_',         getenv('DB_PASSWD'));
-```
 
 ### Use this configuration for development/testing, not production

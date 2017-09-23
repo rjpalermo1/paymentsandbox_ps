@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2017-09-23 12:36:51
+<?php /* Smarty version Smarty-3.1.19, created on 2017-09-23 12:45:08
          compiled from "/var/www/html/modules/gamification/views/templates/hook/notification_bt.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:113719744159c67efebe9682-64169929%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '40a767377adc3931c80391c0678b743058f7f821' => 
     array (
       0 => '/var/www/html/modules/gamification/views/templates/hook/notification_bt.tpl',
-      1 => 1506183130,
+      1 => 1506184930,
       2 => 'file',
     ),
   ),
