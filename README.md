@@ -1,11 +1,10 @@
 # Prestashop on docker-compose
 
-Based on  [PrestaShop/docker](https://github.com/PrestaShop/docker)
-
-## What is this project
-`Prestashop docker-compose` is a great way to bootstrap a Prestashop development environmemt.
+Bootstrap a Prestashop development environmemt with phpmyadmin based on  [PrestaShop/docker](https://github.com/PrestaShop/docker).
 
 ## How to use it
+
+
 
 We recommend to avoid the `PS_INSTALL_AUTO` feature. Instead, copy your own custom installation in `src/`.
 
